@@ -25,6 +25,7 @@ class Login:
 
         self.login.lb_error.setText("")
 
+        # Crear el modelo del usuario según sea email o username
         if "@" in username_or_email:
             user = UserModel(user=None, email=username_or_email, password=password)
         else:
@@ -32,11 +33,17 @@ class Login:
 
         user_controller = LoginController()
         res = user_controller.authenticate_user(user)
+
         if isinstance(res, dict) and "message" in res:
             self.show_error(res["message"])
         elif isinstance(res, UserModel):
-            # Si el login es exitoso
-            self.abrir_pprincipal()
+            # Validar el rol del usuario y abrir la interfaz correspondiente
+            if res._rol == "ADMINISTRADOR":
+                self.abrir_pprincipal()
+            elif res._rol == "USUARIO":
+                self.abrir_pusuario()
+            else:
+                self.show_error("Acceso denegado. Rol desconocido.")
         else:
             self.show_error("Ha ocurrido un error inesperado. Intente nuevamente.")
 
@@ -69,6 +76,7 @@ class Login:
 
     def show_error(self, message):
         self.login.lb_error.setText(message)
+
     def abrir_pprincipal(self):
         from PyQt6.QtWidgets import QMainWindow
         from PyQt6 import uic
@@ -78,5 +86,18 @@ class Login:
 
         # Cargar y mostrar la interfaz principal
         self.principal = QMainWindow()
-        uic.loadUi("src/views/pprincipal.ui", self.principal)
+        uic.loadUi("src/views/admin/pprincipal.ui", self.principal)
         self.principal.show()
+
+    def abrir_pusuario(self):
+        from PyQt6.QtWidgets import QMainWindow
+        from PyQt6 import uic
+
+        # Cerrar ventana de login
+        self.login.close()
+
+        # Cargar y mostrar la interfaz para usuarios
+        self.usuario_window = QMainWindow()
+        uic.loadUi("src/views/usuario/pUsuario.ui", self.usuario_window)
+        self.usuario_window.show()
+

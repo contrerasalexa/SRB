@@ -11,21 +11,21 @@ class UserController:
             print(f"Error al obtener usuarios: {e}")
             return {"message": "Error al obtener usuarios."}
 
-    def create_user(self, first_name, last_name, user, email, password):
+    def create_user(self, first_name, last_name, user, email, password, rol):
         try:
-            if not all([first_name, last_name, user, email, password]):
+            if not all([first_name, last_name, user, email, password, rol]):
                 return {"message": "Todos los campos son obligatorios."}
-            new_user = UserModel(first_name, last_name, user, email, password)
+            new_user = UserModel(first_name, last_name, user, email, password, rol)
             return new_user.create_user()
         except Exception as e:
             print(f"Error al crear usuario: {e}")
             return {"message": "Error al crear usuario."}
 
     def update_user(
-        self, id, first_name=None, last_name=None, user=None, email=None, password=None
+        self, id, first_name=None, last_name=None, user=None, email=None, password=None, rol=None
     ):
         try:
-            if not any([first_name, last_name, user, email, password]):
+            if not any([first_name, last_name, user, email, password, rol]):
                 return {
                     "message": "Debe proporcionar al menos un campo para actualizar."
                 }
@@ -39,11 +39,13 @@ class UserController:
                 user=user or existing_user[3],
                 email=email or existing_user[4],
                 password=password or existing_user[5],
+                rol=rol or existing_user[6],
             )
             return updated_user.update_user(id)
         except Exception as e:
             print(f"Error al actualizar usuario con ID {id}: {e}")
             return {"message": "Error al actualizar usuario."}
+
 
     def delete_user(self, id):
         try:
