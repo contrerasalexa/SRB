@@ -35,8 +35,8 @@ class Login:
         if isinstance(res, dict) and "message" in res:
             self.show_error(res["message"])
         elif isinstance(res, UserModel):
-           # self.main = Main()
-            self.login.close()
+            # Si el login es exitoso
+            self.abrir_pprincipal()
         else:
             self.show_error("Ha ocurrido un error inesperado. Intente nuevamente.")
 
@@ -69,3 +69,14 @@ class Login:
 
     def show_error(self, message):
         self.login.lb_error.setText(message)
+    def abrir_pprincipal(self):
+        from PyQt6.QtWidgets import QMainWindow
+        from PyQt6 import uic
+
+        # Cerrar ventana de login
+        self.login.close()
+
+        # Cargar y mostrar la interfaz principal
+        self.principal = QMainWindow()
+        uic.loadUi("src/views/pprincipal.ui", self.principal)
+        self.principal.show()
