@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../../public/img/icon-SRB.png</normaloff>../../public/img/icon-SRB.png</iconset>
+    <normaloff>../../../public/img/icon-SRB.png</normaloff>../../public/img/icon-SRB.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -50,7 +50,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../../public/img/logo-SRB.png</pixmap>
+    <pixmap>../../../public/img/logo-SRB.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>

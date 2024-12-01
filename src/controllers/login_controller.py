@@ -24,7 +24,12 @@ class LoginController:
             cursor.execute(query, values)
             row = cursor.fetchone()
             if row:
-                return UserModel(user=row[3], email=row[4], password=row[5])
+                # Valida que el usuario tenga un rol asociado
+                if row[6]:  # Supongamos que la columna `rol` está en el índice 6
+                    return UserModel(
+                        user=row[3], email=row[4], password=row[5], rol=row[6]
+                    )
+                return {"message": "El usuario no tiene un rol asignado."}
             return {"message": "Credenciales inválidas."}
         except Exception as e:
             print(f"Error en login: {e}")

@@ -5,13 +5,16 @@ from PyQt6 import uic
 class Principal(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi("src/views/pprincipal.ui", self)  # Carga el diseño de pprincipal.ui
+        uic.loadUi("src/views/admin/pprincipal.ui", self)  # Carga el diseño de pprincipal.ui
 
         # Conectar botones a sus respectivas acciones
-        self.btnUsuarios2.clicked.connect(self.mostrar_usuarios)
+        self.btnUsuarios_2.clicked.connect(self.inicio)
+        self.btnUsuarios.clicked.connect(self.usuarios)
         self.btnSalir.clicked.connect(self.cerrar_sesion)
 
-    def mostrar_usuarios(self):
+    def usuarios(self):
+        self.stackedWidget.setCurrentWidget(self.page_3)
+    def inicio(self):
         """
         Cambia a la página de Usuarios en el QStackedWidget
         """
@@ -21,9 +24,10 @@ class Principal(QMainWindow):
         """
         Cierra la ventana principal y vuelve al login.
         """
-        self.close()  # Cerrar la ventana principal
+        # Cerrar la ventana principal
+        self.close()
 
-        # Reabrir el formulario de login
+        # Crear una nueva instancia de la ventana de login y mostrarla
         from src.views.login import Login
         self.login = Login()
-        self.login.show()
+        self.login.login.show()
