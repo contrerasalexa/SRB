@@ -1,7 +1,7 @@
 from PyQt6 import uic
 from src.models.user_model import UserModel
 from src.controllers.login_controller import LoginController
-#pifrom src.views.main import Main
+from src.views.pprincipal import Principal
 
 
 class Login:
@@ -85,8 +85,7 @@ class Login:
         self.login.close()
 
         # Cargar y mostrar la interfaz principal
-        self.principal = QMainWindow()
-        uic.loadUi("src/views/admin/pprincipal.ui", self.principal)
+        self.principal = Principal()
         self.principal.show()
 
     def abrir_pusuario(self):

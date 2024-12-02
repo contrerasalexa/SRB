@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CreateUserForm</class>
+ <widget class="QDialog" name="CreateUserForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>575</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>S R B | Crear Usuario</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../../public/img/icon-SRB.png</normaloff>../../../public/img/icon-SRB.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QLabel" name="firstNameLabel">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>170</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Nombre:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="firstNameInput">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>160</y>
+     <width>340</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid rgb(40,40,40);
+border-radius: 20px;
+padding: 5px;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lastNameLabel">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>220</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Apellido:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lastNameInput">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>210</y>
+     <width>341</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid rgb(40,40,40);
+border-radius: 20px;
+padding: 5px;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="emailLabel">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>270</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Email:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="emailInput">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>260</y>
+     <width>341</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid rgb(40,40,40);
+border-radius: 20px;
+padding: 5px;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="userLabel">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>320</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Usuario:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="userInput">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>310</y>
+     <width>341</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid rgb(40,40,40);
+border-radius: 20px;
+padding: 5px;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="passwordLabel">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>370</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Contraseña:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="passwordInput">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>360</y>
+     <width>341</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid rgb(40,40,40);
+border-radius: 20px;
+padding: 5px;</string>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::Password</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="roleLabel">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>420</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Rol:</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="roleComboBox">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>410</y>
+     <width>341</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid rgb(40,40,40);
+border-radius: 20px;
+padding: 10px;</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>Administrador</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Usuario</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QPushButton" name="btnGuardar">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>500</y>
+     <width>120</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string>color: rgb(255, 255, 255); font: 75 12pt &quot;Utendo&quot;; background-color: rgb(0, 0, 127);</string>
+   </property>
+   <property name="text">
+    <string>GUARDAR</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnSalir">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>500</y>
+     <width>120</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string>color: rgb(255, 255, 255); font: 75 12pt &quot;Utendo&quot;; background-color: rgb(127, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>SALIR</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>40</y>
+     <width>341</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>22</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Crear usuario nuevo</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lb_image_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>0</y>
+     <width>151</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../../public/img/logo-SRB.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
