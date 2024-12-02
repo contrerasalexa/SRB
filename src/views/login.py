@@ -6,6 +6,7 @@ from src.controllers.login_controller import LoginController
 
 class Login:
     def __init__(self):
+        print("Inicio del programa.")
         self.login = uic.loadUi("src/views/login.ui")
         self.login.line_user.setFocus()
         self.login.show()
@@ -78,16 +79,20 @@ class Login:
         self.login.lb_error.setText(message)
 
     def abrir_pprincipal(self):
-        from PyQt6.QtWidgets import QMainWindow
-        from PyQt6 import uic
+        try:
+            print("Cargando pprincipal...")
+            from src.views.pprincipal import Principal
 
-        # Cerrar ventana de login
-        self.login.close()
+            # Cerrar ventana de login antes de abrir pprincipal
+            self.login.close()
 
-        # Cargar y mostrar la interfaz principal
-        self.principal = QMainWindow()
-        uic.loadUi("src/views/admin/pprincipal.ui", self.principal)
-        self.principal.show()
+            # Cargar la ventana principal
+            self.principal = Principal()
+            self.principal.show()
+            print("Ventana principal cargada correctamente.")
+        except Exception as e:
+            print(f"Error al cargar pprincipal: {e}")
+
 
     def abrir_pusuario(self):
         from PyQt6.QtWidgets import QMainWindow

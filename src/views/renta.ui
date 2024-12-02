@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RentaWindow</class>
+ <widget class="QWidget" name="RentaWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>S R B | RENTAS</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QGroupBox" name="groupBuscarCliente">
+     <property name="title">
+      <string>Buscar Cliente</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayoutCliente">
+      <item>
+       <widget class="QLineEdit" name="lineBuscarCliente">
+        <property name="placeholderText">
+         <string>Nombre o Email del Cliente</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnBuscarCliente">
+        <property name="text">
+         <string>Buscar</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboClientes">
+        <property name="editable">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupSeleccionarBote">
+     <property name="title">
+      <string>Seleccionar Bote</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayoutBote">
+      <item>
+       <widget class="QComboBox" name="comboBotes">
+        <property name="editable">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupTiempoRenta">
+     <property name="title">
+      <string>Tiempo de Renta</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayoutTiempo">
+      <item>
+       <widget class="QLineEdit" name="lineHoras">
+        <property name="placeholderText">
+         <string>Horas</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineDias">
+        <property name="placeholderText">
+         <string>Días</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupCalculo">
+     <property name="title">
+      <string>Resumen de Renta</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayoutCalculo">
+      <item row="0" column="0">
+       <widget class="QLabel" name="labelSubtotal">
+        <property name="text">
+         <string>Subtotal:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="lineCosto">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+        <property name="text">
+         <string>0.00</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="labelGarantia">
+        <property name="text">
+         <string>Garantía:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="lineGarantia">
+        <property name="placeholderText">
+         <string>Ingrese la garantía</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="labelTotal">
+        <property name="text">
+         <string>Total:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLabel" name="valueTotal">
+        <property name="text">
+         <string>$0.00</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btnGuardarRenta">
+     <property name="text">
+      <string>Guardar Renta</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

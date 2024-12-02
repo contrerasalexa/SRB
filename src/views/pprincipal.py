@@ -1,22 +1,31 @@
-from PyQt6.QtWidgets import QMainWindow
+from PyQt6.QtWidgets import QApplication, QMainWindow
 from PyQt6.QtGui import QPixmap
 from PyQt6 import uic
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
+
+from src.views.renta import RentaDialog
 
 class Principal(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi("src/views/admin/pprincipal.ui", self)  # Carga el diseño de pprincipal.ui
+        uic.loadUi("src/views/admin/pprincipal.ui", self)
 
-        # Asegúrate de conectar el botón después de cargar el diseño
-        self.btnSalir.clicked.connect(self.cerrar_sesion)
+        # Conectar el botón Renta a la función
+        self.btnRenta.clicked.connect(self.abrir_renta)
 
-    def cerrar_sesion(self):
-        print("El botón SALIR fue presionado.")  # Debug
-        self.close()
+    def abrir_renta(self):
+        try:
+            print("Abriendo formulario de renta...")
+            renta_form = RentaDialog()  # Crear la ventana de renta
+            renta_form.exec()  # Mostrar como diálogo modal
+            print("Formulario de renta abierto correctamente.")
+        except Exception as e:
+            print(f"Error al abrir la ventana de renta: {e}")
 
-        # Crear una nueva instancia de la ventana de login y mostrarla
-        from src.views.login import Login
-        self.login = Login()
-        self.login.login.show()
-
-
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    ventana = Principal()  # Instanciar la clase Principal, no QMainWindow
+    ventana.show()
+    sys.exit(app.exec())
