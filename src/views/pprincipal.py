@@ -6,19 +6,29 @@ from src.views.admin.table_users import UserTable
 class Principal(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi("src/views/admin/pprincipal.ui", self)  # Carga el diseño de pprincipal.ui
+        uic.loadUi("src/views/pprincipal.ui", self)  # Carga el diseño de pprincipal.ui
 
-        # Asegúrate de conectar el botón después de cargar el diseño
+        # Conectar botones a sus respectivas acciones
+        self.btnUsuarios2.clicked.connect(self.mostrar_usuarios)
         self.btnSalir.clicked.connect(self.cerrar_sesion)
         self.btnUsuarios.clicked.connect(self.administar_usuarios)
 
-    def cerrar_sesion(self):
-        print("El botón SALIR fue presionado.")  # Debug
-        self.close()
+    def mostrar_usuarios(self):
+        """
+        Cambia a la página de Usuarios en el QStackedWidget
+        """
+        self.stackedWidget.setCurrentWidget(self.page)  # Cambia a la página de Usuarios
 
-        # Crear una nueva instancia de la ventana de login y mostrarla
+    def cerrar_sesion(self):
+        """
+        Cierra la ventana principal y vuelve al login.
+        """
+        self.close()  # Cerrar la ventana principal
+
+        # Reabrir el formulario de login
         from src.views.login import Login
         self.login = Login()
+<<<<<<< HEAD
         self.login.login.show()
 
     def administar_usuarios(self):
@@ -27,3 +37,6 @@ class Principal(QMainWindow):
         self.table_users.show()
         self.hide()     
 
+=======
+        self.login.show()
+>>>>>>> parent of 785fc5b (Merge pull request #1 from contrerasalexa/alexa)

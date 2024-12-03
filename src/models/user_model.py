@@ -46,8 +46,8 @@ class UserModel:
 
     def create_user(self):
         query = """
-            INSERT INTO users (first_name, last_name, user, email, password, rol)
-            VALUES (%s, %s, %s, %s, %s, %s)
+            INSERT INTO users (first_name, last_name, user, email, password)
+            VALUES (%s, %s, %s, %s, %s)
         """
         values = (
             self._first_name,
@@ -55,13 +55,11 @@ class UserModel:
             self._user,
             self._email,
             self._password,
-            self._rol,
         )
         result = self._execute_query(query, values)
         if result is None:
             return {"message": "Error al crear usuario"}
         return {"message": "Usuario creado correctamente"}
-
 
     def update_user(self, user_id):
         user = self.get_user_by_id(user_id)
@@ -69,7 +67,7 @@ class UserModel:
             return user
         query = """
             UPDATE users
-            SET first_name = %s, last_name = %s, user = %s, email = %s, password = %s, rol = %s
+            SET first_name = %s, last_name = %s, user = %s, email = %s, password = %s
             WHERE id = %s
         """
         values = (
@@ -78,14 +76,12 @@ class UserModel:
             self._user,
             self._email,
             self._password,
-            self._rol,
             user_id,
         )
         result = self._execute_query(query, values)
         if result is None:
             return {"message": "Error al actualizar usuario"}
         return {"message": "Usuario actualizado correctamente"}
-
 
     def delete_user(self, user_id):
         user = self.get_user_by_id(user_id)

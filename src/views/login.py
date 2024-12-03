@@ -25,7 +25,6 @@ class Login:
 
         self.login.lb_error.setText("")
 
-        # Crear el modelo del usuario según sea email o username
         if "@" in username_or_email:
             user = UserModel(user=None, email=username_or_email, password=password)
         else:
@@ -33,17 +32,11 @@ class Login:
 
         user_controller = LoginController()
         res = user_controller.authenticate_user(user)
-
         if isinstance(res, dict) and "message" in res:
             self.show_error(res["message"])
         elif isinstance(res, UserModel):
-            # Validar el rol del usuario y abrir la interfaz correspondiente
-            if res._rol == "ADMINISTRADOR":
-                self.abrir_pprincipal()
-            elif res._rol == "USUARIO":
-                self.abrir_pusuario()
-            else:
-                self.show_error("Acceso denegado. Rol desconocido.")
+            # Si el login es exitoso
+            self.abrir_pprincipal()
         else:
             self.show_error("Ha ocurrido un error inesperado. Intente nuevamente.")
 
@@ -76,7 +69,6 @@ class Login:
 
     def show_error(self, message):
         self.login.lb_error.setText(message)
-
     def abrir_pprincipal(self):
         from PyQt6.QtWidgets import QMainWindow
         from PyQt6 import uic
@@ -85,6 +77,7 @@ class Login:
         self.login.close()
 
         # Cargar y mostrar la interfaz principal
+<<<<<<< HEAD
         self.principal = Principal()
         self.principal.show()
 
@@ -100,3 +93,8 @@ class Login:
         uic.loadUi("src/views/usuario/pUsuario.ui", self.usuario_window)
         self.usuario_window.show()
 
+=======
+        self.principal = QMainWindow()
+        uic.loadUi("src/views/pprincipal.ui", self.principal)
+        self.principal.show()
+>>>>>>> parent of 785fc5b (Merge pull request #1 from contrerasalexa/alexa)
