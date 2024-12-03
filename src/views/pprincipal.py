@@ -14,6 +14,7 @@ class Principal(QMainWindow):
 
         # Conectar el botón Renta a la función
         self.btnRenta.clicked.connect(self.abrir_renta)
+        self.btnSalir.clicked.connect(self.salir_programa)
 
     def abrir_renta(self):
         try:
@@ -23,6 +24,11 @@ class Principal(QMainWindow):
             print("Formulario de renta abierto correctamente.")
         except Exception as e:
             print(f"Error al abrir la ventana de renta: {e}")
+    def salir_programa(self):
+        """Cierra la aplicación."""
+        print("Saliendo del programa...")
+        self.close()  # Cierra la ventana principal
+        sys.exit()  # Finaliza la aplicación
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
