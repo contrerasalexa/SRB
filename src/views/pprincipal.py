@@ -14,8 +14,6 @@ class Principal(QMainWindow):
         super().__init__()
         uic.loadUi("src/views/admin/pprincipal.ui", self)  # Carga el diseño de pprincipal.ui
 
-        # Asegúrate de conectar el botón después de cargar el diseño
-        self.btnSalir.clicked.connect(self.cerrar_sesion)
         self.btnUsuarios.clicked.connect(self.administar_usuarios)
         self.btnRenta.clicked.connect(self.abrir_renta)
         self.btnSalir.clicked.connect(self.salir_programa)
@@ -28,17 +26,17 @@ class Principal(QMainWindow):
             print("Formulario de renta abierto correctamente.")
         except Exception as e:
             print(f"Error al abrir la ventana de renta: {e}")
-    def salir_programa(self):
-        """Cierra la aplicación."""
-        print("Saliendo del programa...")
-        self.close()  # Cierra la ventana principal
-        sys.exit()  # Finaliza la aplicación
+    
     def administar_usuarios(self):
         self.close()
         self.table_users = UserTable(self)
         self.table_users.show()
         self.hide()     
-
+    def salir_programa(self):
+            """Cierra la aplicación."""
+            print("Saliendo del programa...")
+            self.close()  # Cierra la ventana principal
+            sys.exit()  # Finaliza la aplicación
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

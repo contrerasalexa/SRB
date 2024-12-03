@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1099</width>
-    <height>593</height>
+    <width>803</width>
+    <height>604</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,7 +21,7 @@
     <normaloff>../../public/img/icon-SRB.png</normaloff>../../public/img/icon-SRB.png</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(255, 255, 255);</string>
+   <string notr="true">background-color: rgb(139, 191, 255);</string>
   </property>
   <property name="modal">
    <bool>false</bool>
@@ -29,10 +29,10 @@
   <widget class="QLabel" name="lb_image">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>0</y>
-     <width>611</width>
-     <height>601</height>
+     <x>20</x>
+     <y>60</y>
+     <width>431</width>
+     <height>411</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -54,8 +54,8 @@
   <widget class="QPushButton" name="btn_access">
    <property name="geometry">
     <rect>
-     <x>830</x>
-     <y>430</y>
+     <x>550</x>
+     <y>490</y>
      <width>151</width>
      <height>41</height>
     </rect>
@@ -74,12 +74,12 @@
    </property>
    <property name="styleSheet">
     <string notr="true">font: 700 12pt &quot;Verdana&quot;;
-background-color: rgb(75, 207, 255);
+background-color: rgb(0,0,127);
 color: rgb(255, 255, 255);
 border-radius: 10px;</string>
    </property>
    <property name="text">
-    <string>Acceder</string>
+    <string>Iniciar Sesión</string>
    </property>
    <property name="checkable">
     <bool>false</bool>
@@ -88,9 +88,9 @@ border-radius: 10px;</string>
   <widget class="QFrame" name="horizontalFrame_2">
    <property name="geometry">
     <rect>
-     <x>640</x>
+     <x>480</x>
      <y>320</y>
-     <width>341</width>
+     <width>281</width>
      <height>47</height>
     </rect>
    </property>
@@ -136,7 +136,7 @@ border-radius: 20px;</string>
        <enum>Qt::WheelFocus</enum>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 12pt &quot;Candara&quot;;
+       <string notr="true">font: 12pt &quot;Utendo&quot;;
 border: none;</string>
       </property>
       <property name="text">
@@ -155,9 +155,9 @@ border: none;</string>
   <widget class="QFrame" name="horizontalFrame">
    <property name="geometry">
     <rect>
-     <x>640</x>
-     <y>250</y>
-     <width>341</width>
+     <x>480</x>
+     <y>230</y>
+     <width>281</width>
      <height>47</height>
     </rect>
    </property>
@@ -199,8 +199,17 @@ border-radius: 20px;</string>
         <height>25</height>
        </size>
       </property>
+      <property name="font">
+       <font>
+        <family>Utendo</family>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
       <property name="styleSheet">
-       <string notr="true">font: 12pt &quot;Candara&quot;;
+       <string notr="true">font: 12pt &quot;Utendo&quot;;
 border: none;</string>
       </property>
       <property name="text">
@@ -219,9 +228,9 @@ border: none;</string>
   <widget class="QLabel" name="lb_error">
    <property name="geometry">
     <rect>
-     <x>640</x>
-     <y>380</y>
-     <width>341</width>
+     <x>470</x>
+     <y>410</y>
+     <width>311</width>
      <height>31</height>
     </rect>
    </property>
@@ -254,9 +263,9 @@ font: italic 10pt &quot;Verdana&quot;;</string>
   <widget class="QLabel" name="lb_title">
    <property name="geometry">
     <rect>
-     <x>660</x>
-     <y>140</y>
-     <width>300</width>
+     <x>460</x>
+     <y>70</y>
+     <width>291</width>
      <height>73</height>
     </rect>
    </property>
@@ -267,10 +276,11 @@ font: italic 10pt &quot;Verdana&quot;;</string>
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 700 36pt &quot;Verdana&quot;;</string>
+    <string notr="true">font: 700 30pt &quot;Utendo&quot;;
+color: rgb(0, 0, 127);</string>
    </property>
    <property name="text">
-    <string>Bienvenido</string>
+    <string>Inicio de Sesión</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
