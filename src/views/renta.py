@@ -138,12 +138,18 @@ class RentaDialog(QDialog):
     def calcular_total(self):
         """Calcula el total sumando la garantía al subtotal."""
         try:
-            subtotal = float(self.lineCosto.text() or 0)
-            garantia = float(self.lineGarantia.text() or 0)
+            subtotal = float(self.lineCosto.text() or 0)  # Asegúrate de que `lineCosto` existe
+            garantia = float(self.lineGarantia.text() or 0)  # Asegúrate de que `lineGarantia` existe
             total = subtotal + garantia
-            self.valueTotal.setText(f"${total:.2f}")
+            
+            # Si no tienes valueTotal, cámbialo al widget correcto
+            if hasattr(self, 'valueTotal'):
+                self.valueTotal.setText(f"${total:.2f}")
+            else:
+                QMessageBox.warning(self, "Advertencia", "El widget 'valueTotal' no existe. Verifica el diseño.")
         except ValueError:
-            self.valueTotal.setText("$0.00")
+            if hasattr(self, 'valueTotal'):
+                self.valueTotal.setText("$0.00")
 
     def guardar_renta(self):
         """Guarda un nuevo registro en renta_bote y genera un PDF."""
