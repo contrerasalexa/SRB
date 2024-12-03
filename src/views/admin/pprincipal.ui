@@ -33,7 +33,7 @@
     <property name="currentIndex">
      <number>0</number>
     </property>
-    <widget class="QWidget" name="page">
+    <widget class="QWidget" name="pageInicio">
      <widget class="QLabel" name="lb_image">
    <property name="geometry">
     <rect>
@@ -79,15 +79,53 @@ color: rgb(0, 0, 127);</string>
        <string>AGREGAR USUARIO NUEVO</string>
       </property>
      </widget>
-     <widget class="QTableView" name="tableView">
+     <widget class="QTableWidget" name="tableWidget">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>70</y>
         <width>771</width>
-        <height>441</height>
+        <height>451</height>
        </rect>
       </property>
+      <property name="columnCount">
+       <number>7</number>
+      </property>
+      <column>
+       <property name="text">
+        <string>ID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>NOMBRE</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>PRIMER APELLIDO</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>USUARIO</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>EMAIL</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>ROL</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>ACCIONES</string>
+       </property>
+      </column>
      </widget>
     </widget>
     <widget class="QWidget" name="page_4">
@@ -109,13 +147,13 @@ color: rgb(0, 0, 127);</string>
        <string>REGISTRAR BOTE</string>
       </property>
      </widget>
-     <widget class="QTableView" name="tableView_2">
+     <widget class="QTableWidget" name="tableWidget_4">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>70</y>
-        <width>771</width>
-        <height>441</height>
+        <width>781</width>
+        <height>451</height>
        </rect>
       </property>
      </widget>
@@ -139,13 +177,13 @@ color: rgb(0, 0, 127);</string>
        <string>AGREGAR CLIENTE NUEVO</string>
       </property>
      </widget>
-     <widget class="QTableView" name="tableView_3">
+     <widget class="QTableWidget" name="tableWidget_3">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>70</y>
-        <width>771</width>
-        <height>441</height>
+        <width>781</width>
+        <height>451</height>
        </rect>
       </property>
      </widget>
@@ -154,7 +192,7 @@ color: rgb(0, 0, 127);</string>
      <widget class="QPushButton" name="btnInsertU_4">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>20</x>
         <y>10</y>
         <width>251</width>
         <height>51</height>
@@ -169,12 +207,12 @@ color: rgb(0, 0, 127);</string>
        <string>REGISTRAR RENTA</string>
       </property>
      </widget>
-     <widget class="QTableView" name="tableView_4">
+     <widget class="QTableWidget" name="tableWidget_2">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>70</y>
-        <width>771</width>
+        <width>781</width>
         <height>441</height>
        </rect>
       </property>
@@ -440,6 +478,12 @@ font: 75 12pt &quot;Utendo&quot;;</string>
      <property name="text">
       <string>RENTAS</string>
      </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QPushButton" name="btnSalir">
      <property name="geometry">
@@ -459,7 +503,7 @@ background-color: rgb(0, 0, 127);</string>
       <string>SALIR</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="btnUsuarios_2">
+    <widget class="QPushButton" name="btnInicio">
      <property name="geometry">
       <rect>
        <x>60</x>
