@@ -6,13 +6,17 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 
 from src.views.renta import RentaDialog
+from src.views.admin.table_users import UserTable
+
 
 class Principal(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi("src/views/admin/pprincipal.ui", self)
+        uic.loadUi("src/views/admin/pprincipal.ui", self)  # Carga el diseño de pprincipal.ui
 
-        # Conectar el botón Renta a la función
+        # Asegúrate de conectar el botón después de cargar el diseño
+        self.btnSalir.clicked.connect(self.cerrar_sesion)
+        self.btnUsuarios.clicked.connect(self.administar_usuarios)
         self.btnRenta.clicked.connect(self.abrir_renta)
         self.btnSalir.clicked.connect(self.salir_programa)
 
@@ -29,6 +33,12 @@ class Principal(QMainWindow):
         print("Saliendo del programa...")
         self.close()  # Cierra la ventana principal
         sys.exit()  # Finaliza la aplicación
+    def administar_usuarios(self):
+        self.close()
+        self.table_users = UserTable(self)
+        self.table_users.show()
+        self.hide()     
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

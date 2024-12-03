@@ -1,6 +1,5 @@
 from src.models.user_model import UserModel
 
-
 class UserController:
     def get_all_users(self):
         try:
@@ -21,9 +20,7 @@ class UserController:
             print(f"Error al crear usuario: {e}")
             return {"message": "Error al crear usuario."}
 
-    def update_user(
-        self, id, first_name=None, last_name=None, user=None, email=None, password=None, rol=None
-    ):
+    def update_user(self, id, first_name=None, last_name=None, user=None, email=None, password=None, rol=None):
         try:
             if not any([first_name, last_name, user, email, password, rol]):
                 return {
@@ -46,7 +43,6 @@ class UserController:
             print(f"Error al actualizar usuario con ID {id}: {e}")
             return {"message": "Error al actualizar usuario."}
 
-
     def delete_user(self, id):
         try:
             user_model = UserModel()
@@ -57,3 +53,15 @@ class UserController:
         except Exception as e:
             print(f"Error al eliminar usuario con ID {id}: {e}")
             return {"message": "Error al eliminar usuario."}
+
+    def get_user_by_id(self, id):
+        try:
+            user_model = UserModel()
+            user = user_model.get_user_by_id(id)
+            if user:
+                return user
+            else:
+                return {"message": "El usuario no existe."}
+        except Exception as e:
+            print(f"Error al obtener usuario con ID {id}: {e}")
+            return {"message": "Error al obtener usuario."}

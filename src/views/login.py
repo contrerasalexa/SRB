@@ -1,7 +1,7 @@
 from PyQt6 import uic
 from src.models.user_model import UserModel
 from src.controllers.login_controller import LoginController
-#pifrom src.views.main import Main
+from src.views.pprincipal import Principal
 
 
 class Login:
@@ -85,13 +85,13 @@ class Login:
 
             # Cerrar ventana de login antes de abrir pprincipal
             self.login.close()
-
             # Cargar la ventana principal
             self.principal = Principal()
             self.principal.show()
             print("Ventana principal cargada correctamente.")
         except Exception as e:
             print(f"Error al cargar pprincipal: {e}")
+
 
 
     def abrir_pusuario(self):
